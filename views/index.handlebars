@@ -1,0 +1,35 @@
+<div>
+
+    <h1> Burger!</h1>
+
+</div>
+<div id="devoured">
+    <h3 id="heaven">I wish I had another one:</h3>
+    <div>
+        <ul>
+            {{#each burger}}
+            {{#unless this.devoured}}
+            <li>
+                <p>{{this.burger_name}} </p>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div id="devoured">
+    <h3 id="heaven">I wish I had another one:</h3>
+    <div>
+        <ul>
+            {{#each burger}}
+            {{#if this.devoured}}
+            <li>
+                <p>{{this.burger_name}} </p>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+ 
