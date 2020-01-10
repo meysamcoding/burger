@@ -1,28 +1,29 @@
-<div>
+<div class="container">
 
     <h1> Burger!</h1>
 
 </div>
 
-<div class="row ">
-    <div class="col-sm-4" id="devoured">
-        <h3 id="heaven">I wish I had another one:</h3>
+<div class="row container">
+    <div class="col-lg-4" id="devoured">
+        <h3 id="heaven">I am eating:</h3>
 
         <ul>
             {{#each burger}}
             {{#unless this.devoured}}
             <li>
-                <p>{{this.burger_name}} </p>
+                <form action="/burger/{{this.id}}?_method=POST" method="POST">
+                    <button type="submit"
+                         >
+                        {{this.burger_name}}</button>
+                </form>
             </li>
             {{/unless}}
             {{/each}}
         </ul>
     </div>
-
-
-
-    <div class="col-sm-4" id="devoured">
-        <h3 id="heaven">I wish I had another one:</h3>
+    <div class="col-lg-4" id="devoured">
+        <h3 id="heaven">I ate:</h3>
 
         <ul>
             {{#each burger}}
@@ -35,7 +36,12 @@
         </ul>
 
     </div>
-
-
-
+</div>
+<div class="container" id="order">
+    <form action="/burger" method="POST" class="center-align">
+    <input type="text" id="name"   name="burger_name" placeholder="what do you want?">
+    <button type="submit"
+        > add order
+        </button>
+</form>
 </div>
